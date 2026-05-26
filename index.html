@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<meta name="theme-color" content="#0A1628"/>
-<meta name="description" content="RentTrack — Gestisci affitti, inquilini e cedolini semplicemente. Scarica gratis su Android."/>
-<title>RentTrack — Gestione Affitti</title>
+<meta name="theme-color" content="#080E1C"/>
+<meta name="description" content="RentTrack — L'app italiana per gestire affitti, inquilini e cedolini. Gratis su Android."/>
+<title>RentTrack — Gestione Affitti Semplice</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -18,8 +18,6 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}
-
-/* ── UTILITIES ── */
 .hidden{display:none!important}
 
 /* ── LOADER ── */
@@ -37,42 +35,27 @@ a{text-decoration:none;color:inherit}
 /* ══════════════════════════════════════════
    LISTING PAGE STYLES
 ══════════════════════════════════════════ */
-
-/* Hero */
 .l-hero{position:relative;width:100%;height:300px;overflow:hidden;background:linear-gradient(135deg,#0D1B35,#122040)}
 .l-hero img{width:100%;height:100%;object-fit:cover}
 .l-hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,14,28,.2) 0%,rgba(8,14,28,.9) 100%)}
 .l-hero-placeholder{width:100%;height:260px;display:flex;align-items:center;justify-content:center;font-size:80px;background:linear-gradient(135deg,#0D1B35,#122040)}
-
-/* Photo count badge */
 .photo-badge{position:absolute;bottom:16px;right:16px;background:rgba(0,0,0,.65);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 12px;font-size:12px;font-weight:600;color:#fff;display:flex;align-items:center;gap:5px}
-
-/* Content */
 .l-content{padding:20px 16px 120px;max-width:640px;margin:0 auto}
-
 .l-price{font-size:32px;font-weight:900;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-1px;margin-bottom:4px}
 .l-title{font-size:22px;font-weight:800;color:var(--text);line-height:1.3;margin-bottom:8px}
 .l-location{color:var(--sub);font-size:14px;margin-bottom:4px;display:flex;align-items:center;gap:5px}
 .l-avail{font-size:13px;color:var(--sub);margin-bottom:16px}
 .l-avail strong{color:var(--green)}
-
-/* Chips */
 .chips{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0 18px}
 .chip{background:var(--card);border:1px solid var(--border);border-radius:99px;padding:5px 13px;font-size:13px;color:#CBD5E1;white-space:nowrap;font-weight:500}
 .chip-ok{border-color:rgba(0,212,140,.5);color:var(--green);background:rgba(0,212,140,.08)}
 .chip-no{border-color:rgba(248,113,113,.5);color:#F87171;background:rgba(248,113,113,.08)}
-
-/* Gallery */
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin-bottom:18px;border-radius:14px;overflow:hidden}
 .gallery img{width:100%;aspect-ratio:1;object-fit:cover;cursor:pointer;transition:opacity .2s,transform .2s}
 .gallery img:hover{opacity:.8;transform:scale(1.02)}
-
-/* Cards */
 .l-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px;margin-bottom:12px;animation:fadeUp .4s ease both}
 .l-card-title{font-size:14px;font-weight:700;color:var(--cyan-soft);margin-bottom:14px;display:flex;align-items:center;gap:7px;letter-spacing:.3px}
 .l-desc{color:#CBD5E1;font-size:14px;line-height:1.75;white-space:pre-wrap}
-
-/* Contacts */
 .l-contacts{display:flex;flex-direction:column;gap:10px}
 .l-btn{display:flex;align-items:center;justify-content:center;gap:9px;padding:16px;border-radius:14px;font-size:15px;font-weight:700;transition:transform .15s,box-shadow .15s}
 .l-btn:active{transform:scale(.97)}
@@ -82,135 +65,142 @@ a{text-decoration:none;color:inherit}
 .l-btn-wa:hover{background:rgba(37,211,102,.18);box-shadow:0 4px 20px rgba(37,211,102,.2)}
 .l-btn-email{background:rgba(0,200,255,.1);color:var(--cyan);border:1px solid rgba(0,200,255,.3)}
 .l-btn-email:hover{background:rgba(0,200,255,.18);box-shadow:0 4px 20px rgba(0,200,255,.2)}
-
-/* Sticky contact bar */
 .l-sticky{position:fixed;bottom:0;left:0;right:0;z-index:100;padding:12px 16px 20px;background:linear-gradient(to top,rgba(8,14,28,1) 60%,transparent);display:flex;gap:10px;max-width:640px;margin:0 auto}
 .l-sticky-btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:15px;border-radius:14px;font-size:14px;font-weight:700;transition:transform .15s}
 .l-sticky-btn:active{transform:scale(.97)}
-
-/* Branding footer */
 .l-branding{margin-top:8px;padding:20px;background:linear-gradient(135deg,rgba(124,92,252,.08),rgba(0,200,255,.08));border:1px solid rgba(124,92,252,.2);border-radius:18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px}
 .l-brand-logo{font-size:13px;font-weight:700;color:var(--cyan-soft)}
 .l-brand-sub{color:var(--muted);font-size:12px}
 .l-brand-cta{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border-radius:10px;font-size:13px;font-weight:700;margin-top:4px;transition:transform .15s,box-shadow .15s}
 .l-brand-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,92,252,.4)}
-
-/* Unavailable / Error */
 .l-center{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;text-align:center;padding:32px;gap:16px}
 .l-center-icon{font-size:72px;margin-bottom:8px}
 .l-center h1{font-size:22px;font-weight:800;color:var(--text)}
 .l-center p{color:var(--sub);font-size:15px;max-width:300px;line-height:1.6}
-
-/* Animations */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
 /* ══════════════════════════════════════════
    LANDING PAGE STYLES
 ══════════════════════════════════════════ */
-
 .landing{position:relative;min-height:100vh;overflow:hidden;display:flex;flex-direction:column}
 
-/* Animated background */
+/* BG */
 .bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.orb{position:absolute;border-radius:50%;filter:blur(120px);opacity:.12}
-.orb1{width:600px;height:600px;background:#6C63FF;top:-200px;left:-200px;animation:drift1 15s ease-in-out infinite}
-.orb2{width:500px;height:500px;background:#00C8FF;bottom:-150px;right:-150px;animation:drift2 18s ease-in-out infinite}
-.orb3{width:300px;height:300px;background:#FF6584;top:40%;left:30%;animation:drift3 12s ease-in-out infinite}
-@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(60px,40px)}}
-@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-50px,-60px)}}
-@keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-40px)}}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);opacity:.14}
+.orb1{width:560px;height:560px;background:radial-gradient(#6C63FF,transparent);top:-200px;left:-150px;animation:drift1 22s ease-in-out infinite}
+.orb2{width:480px;height:480px;background:radial-gradient(#00C8FF,transparent);bottom:-120px;right:-120px;animation:drift2 28s ease-in-out infinite}
+.orb3{width:320px;height:320px;background:radial-gradient(#FF6584,transparent);top:45%;left:35%;animation:drift3 16s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(80px,60px) scale(1.1)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-70px,-80px) scale(1.1)}}
+@keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-50px)}}
+.bg-grid{position:fixed;inset:0;z-index:0;opacity:.025;background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
 
-/* Grid line texture */
-.bg-grid{position:fixed;inset:0;z-index:0;opacity:.03;background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:40px 40px;pointer-events:none}
-
-/* Nav */
-.lp-nav{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:900px;margin:0 auto;width:100%}
+/* NAV — sticky glass */
+.lp-nav{position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:960px;margin:0 auto;width:100%;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);background:rgba(8,14,28,.75);border-bottom:1px solid rgba(255,255,255,.06)}
 .lp-logo{display:flex;align-items:center;gap:10px}
-.lp-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 16px rgba(0,200,255,.3)}
-.lp-logo-name{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-.5px}
-.lp-nav-cta{padding:9px 18px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border-radius:99px;font-size:13px;font-weight:700;transition:transform .15s,box-shadow .15s;white-space:nowrap}
-.lp-nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,92,252,.5)}
+.lp-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 4px 16px rgba(0,200,255,.25)}
+.lp-logo-name{font-size:17px;font-weight:800;color:var(--text);letter-spacing:-.5px}
+.lp-nav-cta{padding:8px 18px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border-radius:99px;font-size:13px;font-weight:700;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.lp-nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,92,252,.45)}
 
-/* Hero */
-.lp-hero{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 24px 20px;max-width:600px;margin:0 auto;width:100%}
-.lp-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.25);border-radius:99px;padding:7px 16px;font-size:12px;font-weight:600;color:#A78BFA;margin-bottom:24px;animation:fadeUp .5s ease .1s both}
-.lp-headline{font-size:clamp(32px,8vw,52px);font-weight:900;line-height:1.1;letter-spacing:-2px;margin-bottom:16px;animation:fadeUp .5s ease .2s both}
+/* HERO */
+.lp-hero{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;padding:72px 24px 56px;max-width:680px;margin:0 auto;width:100%}
+.lp-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(124,92,252,.1);border:1px solid rgba(124,92,252,.25);border-radius:99px;padding:7px 18px;font-size:12px;font-weight:600;color:#A78BFA;margin-bottom:28px;animation:fadeUp .5s ease .1s both}
+.lp-headline{font-size:clamp(34px,9vw,60px);font-weight:900;line-height:1.07;letter-spacing:-2.5px;margin-bottom:22px;animation:fadeUp .5s ease .2s both}
 .lp-headline-accent{background:linear-gradient(135deg,var(--cyan) 0%,var(--purple) 60%,#FF6584 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.lp-sub{font-size:17px;color:var(--sub);line-height:1.65;margin-bottom:32px;max-width:480px;animation:fadeUp .5s ease .3s both}
+.lp-sub{font-size:18px;color:var(--sub);line-height:1.65;margin-bottom:36px;max-width:520px;animation:fadeUp .5s ease .3s both}
+.lp-trust-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:center;animation:fadeUp .5s ease .4s both}
+.lp-trust-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:99px;padding:6px 14px;font-size:12px;color:var(--sub);font-weight:500;transition:border-color .2s}
+.lp-trust-pill:hover{border-color:rgba(0,200,255,.2)}
 
-/* CTA group */
-.lp-cta-group{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:340px;margin-bottom:48px;animation:fadeUp .5s ease .4s both}
-.lp-btn-primary{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:18px 28px;background:linear-gradient(135deg,#0EA5E9,#6C63FF,#8B5CF6);color:#fff;border-radius:16px;font-size:16px;font-weight:800;box-shadow:0 8px 32px rgba(108,99,255,.45);transition:transform .2s,box-shadow .2s;overflow:hidden}
-.lp-btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);animation:shimmer 2.5s ease-in-out infinite 1s}
-@keyframes shimmer{to{transform:translateX(100%)}}
-.lp-btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(108,99,255,.55)}
-.lp-btn-primary:active{transform:scale(.98)}
-.lp-trust{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap;justify-content:center}
-.lp-trust-item{display:flex;align-items:center;gap:5px}
+/* PAIN POINTS */
+.lp-problems{position:relative;z-index:5;display:flex;gap:12px;padding:0 24px 64px;max-width:840px;margin:0 auto;width:100%;flex-wrap:wrap;justify-content:center}
+.prob-card{flex:1;min-width:190px;background:rgba(17,34,64,.5);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:22px 18px;text-align:center;backdrop-filter:blur(12px);transition:border-color .2s,transform .2s}
+.prob-card:hover{border-color:rgba(124,92,252,.2);transform:translateY(-3px)}
+.prob-emoji{font-size:30px;margin-bottom:12px}
+.prob-text{font-size:14px;font-weight:600;color:var(--sub);line-height:1.45}
 
+/* FEATURES */
+.lp-features{position:relative;z-index:5;padding:0 24px 64px;max-width:960px;margin:0 auto;width:100%}
+.lp-section-label{display:flex;align-items:center;justify-content:center;gap:8px;font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px}
+.lp-section-title{text-align:center;font-size:clamp(24px,5vw,38px);font-weight:800;letter-spacing:-1px;margin-bottom:10px;line-height:1.15}
+.lp-section-sub{text-align:center;color:var(--sub);font-size:15px;margin-bottom:40px;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(min-width:640px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
+.feat-card{background:rgba(17,34,64,.55);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:24px 18px;display:flex;flex-direction:column;gap:12px;transition:border-color .25s,transform .25s,box-shadow .25s}
+.feat-card:hover{border-color:rgba(0,200,255,.2);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.35)}
+.feat-icon-wrap{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.feat-card h3{font-size:15px;font-weight:700;color:var(--text);line-height:1.3}
+.feat-card p{font-size:13px;color:var(--muted);line-height:1.55}
 
-/* Features section */
-.lp-features{position:relative;z-index:5;padding:20px 24px 48px;max-width:900px;margin:0 auto;width:100%}
-.lp-section-label{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;font-weight:700;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
-.lp-section-title{text-align:center;font-size:clamp(22px,5vw,32px);font-weight:800;letter-spacing:-.5px;margin-bottom:8px;line-height:1.2}
-.lp-section-sub{text-align:center;color:var(--sub);font-size:15px;margin-bottom:36px;line-height:1.6}
-.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:600px){.feat-grid{grid-template-columns:repeat(3,1fr)}}
-.feat-card{background:rgba(17,34,64,.6);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:20px 16px;display:flex;flex-direction:column;gap:10px;transition:border-color .2s,transform .2s,box-shadow .2s;cursor:default}
-.feat-card:hover{border-color:rgba(0,200,255,.2);transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.feat-icon-wrap{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.feat-card h3{font-size:14px;font-weight:700;color:var(--text);line-height:1.3}
-.feat-card p{font-size:12px;color:var(--muted);line-height:1.5}
+/* TESTIMONIALS */
+.lp-testimonials{position:relative;z-index:5;padding:0 24px 64px;max-width:960px;margin:0 auto;width:100%}
+.testi-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
+@media(min-width:600px){.testi-grid{grid-template-columns:repeat(3,1fr)}}
+.testi-card{background:rgba(17,34,64,.5);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:24px 20px;display:flex;flex-direction:column;gap:14px;backdrop-filter:blur(12px);transition:border-color .2s,transform .2s}
+.testi-card:hover{border-color:rgba(0,200,255,.15);transform:translateY(-2px)}
+.testi-stars{color:#FBBF24;font-size:14px;letter-spacing:2px}
+.testi-quote{font-size:14px;color:#CBD5E1;line-height:1.65;font-style:italic;flex:1}
+.testi-author{font-size:13px;font-weight:700;color:var(--cyan-soft)}
+.testi-role{font-size:12px;color:var(--muted);margin-top:2px}
 
-/* Pricing section */
-.lp-pricing{position:relative;z-index:5;padding:0 24px 56px;max-width:700px;margin:0 auto;width:100%}
-.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
-@media(max-width:440px){.price-grid{grid-template-columns:1fr}}
-.price-card{background:rgba(17,34,64,.6);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:22px 18px;transition:transform .2s}
-.price-card.pro{background:linear-gradient(145deg,rgba(108,99,255,.12),rgba(0,200,255,.08));border-color:rgba(108,99,255,.3);transform:scale(1.02)}
+/* PRICING */
+.lp-pricing{position:relative;z-index:5;padding:0 24px 64px;max-width:760px;margin:0 auto;width:100%}
+.price-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+@media(max-width:480px){.price-grid{grid-template-columns:1fr}}
+.price-card{background:rgba(17,34,64,.6);border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:24px 20px;transition:transform .2s}
+.price-card.pro{background:linear-gradient(145deg,rgba(108,99,255,.14),rgba(0,200,255,.08));border-color:rgba(108,99,255,.35);transform:scale(1.02);box-shadow:0 20px 60px rgba(108,99,255,.18)}
 .price-card.pro:hover{transform:scale(1.04)}
-.price-badge{display:inline-block;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:12px}
+.price-badge{display:inline-block;padding:4px 12px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:14px}
 .price-badge.free{background:rgba(100,116,139,.15);color:var(--muted)}
 .price-badge.pro-badge{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
-.price-name{font-size:20px;font-weight:800;margin-bottom:12px}
-.price-options{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
-.price-option{border-radius:12px;padding:10px 12px;cursor:pointer;border:1px solid rgba(255,255,255,.08);transition:border-color .2s,background .2s}
+.price-name{font-size:22px;font-weight:800;margin-bottom:14px}
+.price-options{display:flex;flex-direction:column;gap:8px;margin-bottom:18px}
+.price-option{border-radius:12px;padding:12px 14px;border:1px solid rgba(255,255,255,.08);transition:border-color .2s,background .2s}
 .price-option.monthly{background:rgba(255,255,255,.03)}
-.price-option.annual{background:linear-gradient(135deg,rgba(0,200,255,.08),rgba(124,92,252,.08));border-color:rgba(0,200,255,.25)}
-.po-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
-.po-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.price-option.annual{background:linear-gradient(135deg,rgba(0,200,255,.08),rgba(124,92,252,.08));border-color:rgba(0,200,255,.28)}
+.po-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:3px}
+.po-label{font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
 .po-save{font-size:10px;font-weight:700;color:var(--green);background:rgba(0,212,140,.12);border-radius:99px;padding:2px 8px}
-.po-price{font-size:20px;font-weight:900;letter-spacing:-.5px}
-.po-price span{font-size:12px;font-weight:500;color:var(--muted)}
+.po-price{font-size:22px;font-weight:900;letter-spacing:-.5px}
+.po-price span{font-size:13px;font-weight:500;color:var(--muted)}
 .po-sub{font-size:11px;color:var(--muted);margin-top:2px}
-.price-amount{font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:14px}
+.price-amount{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:16px}
 .price-amount span{font-size:14px;font-weight:500;color:var(--muted)}
-.price-features{display:flex;flex-direction:column;gap:8px}
-.pf-item{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--sub)}
+.price-features{display:flex;flex-direction:column;gap:9px}
+.pf-item{display:flex;align-items:center;gap:9px;font-size:13px;color:var(--sub)}
 .pf-item .pf-check{color:var(--green);font-size:14px;flex-shrink:0}
 .pf-item .pf-x{color:var(--muted);font-size:14px;flex-shrink:0}
 .pf-item.pf-yes{color:#CBD5E1}
 
-/* Final CTA section */
-.lp-final-cta{position:relative;z-index:5;padding:0 24px 24px;text-align:center;max-width:480px;margin:0 auto;width:100%}
-.lp-final-cta h2{font-size:clamp(22px,5vw,30px);font-weight:900;letter-spacing:-.5px;margin-bottom:12px;line-height:1.2}
-.lp-final-cta p{color:var(--sub);font-size:15px;margin-bottom:28px;line-height:1.6}
+/* FAQ */
+.lp-faq{position:relative;z-index:5;padding:0 24px 64px;max-width:680px;margin:0 auto;width:100%}
+.faq-list{margin-top:36px;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:rgba(17,34,64,.5);border:1px solid rgba(255,255,255,.07);border-radius:16px;overflow:hidden;cursor:pointer;transition:border-color .2s}
+.faq-item:hover{border-color:rgba(0,200,255,.2)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;font-size:15px;font-weight:600;color:var(--text);gap:12px;user-select:none}
+.faq-arrow{font-size:20px;color:var(--cyan);transition:transform .25s;flex-shrink:0;line-height:1}
+.faq-item.open .faq-arrow{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:200px}
+.faq-a-inner{padding:0 20px 18px;font-size:14px;color:var(--sub);line-height:1.65}
 
-/* Social proof */
-.lp-social{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:20px}
-.lp-stat{text-align:center}
-.lp-stat-num{font-size:22px;font-weight:900;color:var(--text)}
-.lp-stat-label{font-size:11px;color:var(--muted);margin-top:2px}
-.lp-divider{width:1px;height:30px;background:rgba(255,255,255,.08)}
+/* FINAL CTA */
+.lp-final-cta{position:relative;z-index:5;padding:0 24px 64px;text-align:center;max-width:560px;margin:0 auto;width:100%}
+.lp-btn-primary{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 36px;background:linear-gradient(135deg,#0EA5E9,#6C63FF,#8B5CF6);color:#fff;border-radius:16px;font-size:16px;font-weight:800;box-shadow:0 8px 36px rgba(108,99,255,.45);transition:transform .2s,box-shadow .2s;overflow:hidden}
+.lp-btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);transform:translateX(-100%);animation:shimmer 2.5s ease-in-out infinite 1s}
+@keyframes shimmer{to{transform:translateX(100%)}}
+.lp-btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(108,99,255,.55)}
+.lp-btn-primary:active{transform:scale(.98)}
 
-/* Footer */
-.lp-footer{position:relative;z-index:5;text-align:center;padding:24px;color:var(--muted);font-size:12px}
+/* FOOTER */
+.lp-footer{position:relative;z-index:5;text-align:center;padding:28px 24px;color:var(--muted);font-size:12px;border-top:1px solid rgba(255,255,255,.05)}
 .lp-footer a{color:#475569;text-decoration:underline}
-.lp-footer-links{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.lp-footer-links{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:10px;flex-wrap:wrap}
 
-/* ── SECTION ANIMATIONS ── */
-.anim-reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+/* ANIMATIONS */
+.anim-reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
 .anim-reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
@@ -295,7 +285,6 @@ function renderListing(l, photos) {
        </div>`
     : "";
 
-  // Build contact buttons (sticky + inline)
   const phoneBtns = [];
   if (l.contact_phone)    phoneBtns.push({type:"phone",href:`tel:${l.contact_phone}`,label:"Chiama",cls:"l-btn-phone"});
   if (l.contact_whatsapp) phoneBtns.push({type:"wa",href:`https://wa.me/${l.contact_whatsapp.replace(/\D/g,"")}`,label:"WhatsApp",cls:"l-btn-wa"});
@@ -310,13 +299,10 @@ function renderListing(l, photos) {
        </div>`
     : "";
 
-  // Sticky bar (max 2 buttons)
   const stickyBtns = phoneBtns.slice(0,2).map(b=>
     `<a class="l-sticky-btn ${b.cls}" href="${b.href}">${icons[b.type]} ${b.label}</a>`
   ).join("");
-  const stickyBar = stickyBtns
-    ? `<div class="l-sticky">${stickyBtns}</div>`
-    : "";
+  const stickyBar = stickyBtns ? `<div class="l-sticky">${stickyBtns}</div>` : "";
 
   const photoBadge = photos.length > 1
     ? `<div class="photo-badge">📷 ${photos.length} foto</div>`
@@ -380,7 +366,7 @@ function showLanding() {
       </div>
       <div class="bg-grid"></div>
 
-      <!-- NAV -->
+      <!-- NAV sticky glass -->
       <nav class="lp-nav">
         <div class="lp-logo">
           <div class="lp-logo-icon">🏠</div>
@@ -391,60 +377,115 @@ function showLanding() {
 
       <!-- HERO -->
       <section class="lp-hero">
-        <div class="lp-badge">✨ App per proprietari immobiliari · Android</div>
+        <div class="lp-badge">✨ App italiana per proprietari · Android</div>
         <h1 class="lp-headline">
-          Gestisci i tuoi<br>
-          <span class="lp-headline-accent">affitti senza stress</span>
+          Il modo più semplice<br>
+          <span class="lp-headline-accent">di gestire i tuoi affitti</span>
         </h1>
         <p class="lp-sub">
-          Inquilini, cedolini, scadenze, annunci e report finanziari — tutto in un'unica app. Italiana, semplice, gratuita.
+          Cedolini automatici, pagamenti tracciati, annunci con QR Code e report finanziari.<br>
+          Tutto gratis, tutto in italiano.
         </p>
+        <div class="lp-trust-row">
+          <span class="lp-trust-pill">✅ Gratis</span>
+          <span class="lp-trust-pill">🔒 Privacy first</span>
+          <span class="lp-trust-pill">🇮🇹 Made in Italy</span>
+          <span class="lp-trust-pill">⭐ 7 giorni Pro gratis</span>
+        </div>
       </section>
+
+      <!-- PAIN POINTS -->
+      <div class="lp-problems anim-reveal">
+        <div class="prob-card">
+          <div class="prob-emoji">😩</div>
+          <div class="prob-text">Stanco di gestire tutto su fogli Excel?</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-emoji">📅</div>
+          <div class="prob-text">Dimentichi le scadenze dei canoni?</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-emoji">📄</div>
+          <div class="prob-text">Perdi ore a generare cedolini a mano?</div>
+        </div>
+      </div>
 
       <!-- FEATURES -->
       <section class="lp-features anim-reveal" id="features">
         <p class="lp-section-label">⚡ Funzionalità</p>
-        <h2 class="lp-section-title">Tutto ciò che ti serve</h2>
-        <p class="lp-section-sub">Smetti di usare fogli Excel. RentTrack gestisce tutto automaticamente.</p>
+        <h2 class="lp-section-title">Tutto ciò che serve, niente di più</h2>
+        <p class="lp-section-sub">RentTrack gestisce al posto tuo i compiti ripetitivi. Tu pensi agli immobili.</p>
         <div class="feat-grid">
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(0,200,255,.1)">📋</div>
-            <h3>Cedolini & Scadenze</h3>
-            <p>Genera avvisi di pagamento mensili e invia PDF agli inquilini via WhatsApp o email.</p>
+            <div class="feat-icon-wrap" style="background:rgba(0,200,255,.12)">📋</div>
+            <h3>Cedolini automatici</h3>
+            <p>Genera avvisi di pagamento mensili in un tap. Invia PDF agli inquilini via WhatsApp o email.</p>
           </div>
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(0,212,140,.1)">💰</div>
-            <h3>Traccia Pagamenti</h3>
+            <div class="feat-icon-wrap" style="background:rgba(0,212,140,.12)">💰</div>
+            <h3>Traccia i pagamenti</h3>
             <p>Registra incassi, morosità e versamenti parziali. Storico completo per ogni inquilino.</p>
           </div>
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(124,92,252,.1)">📊</div>
-            <h3>Report Finanziari</h3>
-            <p>Bilancio entrate/uscite, grafici mensili ed export in CSV ed Excel.</p>
+            <div class="feat-icon-wrap" style="background:rgba(124,92,252,.12)">📊</div>
+            <h3>Report finanziari</h3>
+            <p>Bilancio entrate/uscite, grafici mensili ed export in CSV ed Excel con un click.</p>
           </div>
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(251,191,36,.1)">📢</div>
+            <div class="feat-icon-wrap" style="background:rgba(251,191,36,.12)">📢</div>
             <h3>Annunci con QR</h3>
-            <p>Pubblica annunci con foto, condividi link e QR Code con i potenziali inquilini.</p>
+            <p>Pubblica annunci con foto, condividi link e QR Code. Annunci Pro in cima alla vetrina.</p>
           </div>
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(248,113,113,.1)">🔔</div>
-            <h3>Notifiche Scadenze</h3>
-            <p>Ricevi notifiche automatiche prima delle scadenze dei cedolini e dei contratti.</p>
+            <div class="feat-icon-wrap" style="background:rgba(248,113,113,.12)">🔔</div>
+            <h3>Notifiche scadenze</h3>
+            <p>L'app ti avvisa prima delle scadenze dei cedolini e dei contratti. Zero dimenticanze.</p>
           </div>
           <div class="feat-card">
-            <div class="feat-icon-wrap" style="background:rgba(99,102,241,.1)">📁</div>
-            <h3>Archivio Documenti</h3>
-            <p>Carica e organizza contratti, ricevute e documenti degli inquilini in un click.</p>
+            <div class="feat-icon-wrap" style="background:rgba(99,102,241,.12)">📁</div>
+            <h3>Archivio documenti</h3>
+            <p>Carica contratti, ricevute e documenti degli inquilini. Sempre accessibili.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="lp-testimonials anim-reveal">
+        <p class="lp-section-label">💬 Recensioni</p>
+        <h2 class="lp-section-title">Chi lo usa, non torna indietro</h2>
+        <div class="testi-grid">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Finalmente ho smesso di usare Excel. Con RentTrack gestisco 2 appartamenti in 5 minuti al mese."</p>
+            <div>
+              <div class="testi-author">Marco R.</div>
+              <div class="testi-role">Proprietario · Torino</div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"I cedolini li genera da soli e li invia in un tap. Prima ci mettevo un'ora ogni mese."</p>
+            <div>
+              <div class="testi-author">Laura M.</div>
+              <div class="testi-role">Proprietaria · Milano</div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-quote">"Mi avvisa quando un inquilino è in ritardo. Semplice, precisa e completamente italiana."</p>
+            <div>
+              <div class="testi-author">Roberto F.</div>
+              <div class="testi-role">Proprietario · Roma</div>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- PRICING -->
       <section class="lp-pricing anim-reveal" id="pricing">
-        <p class="lp-section-label">💎 Piani</p>
+        <p class="lp-section-label">💎 Prezzi</p>
         <h2 class="lp-section-title">Semplice e trasparente</h2>
-        <p class="lp-section-sub">Inizia gratis, passa a Pro quando ne hai bisogno.</p>
+        <p class="lp-section-sub">Inizia gratis. Passa a Pro quando ne hai bisogno.</p>
         <div class="price-grid">
           <div class="price-card">
             <span class="price-badge free">GRATUITO</span>
@@ -493,6 +534,30 @@ function showLanding() {
         </div>
       </section>
 
+      <!-- FAQ -->
+      <section class="lp-faq anim-reveal">
+        <p class="lp-section-label">❓ FAQ</p>
+        <h2 class="lp-section-title">Hai qualche dubbio?</h2>
+        <div class="faq-list">
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>È davvero gratis?</span><span class="faq-arrow">+</span></div>
+            <div class="faq-a"><p class="faq-a-inner">Sì, la versione Free è completamente gratuita e senza limiti di tempo. Puoi gestire fino a 3 immobili senza pagare nulla. Il piano Pro aggiunge funzionalità avanzate ed è opzionale.</p></div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>I miei dati sono al sicuro?</span><span class="faq-arrow">+</span></div>
+            <div class="faq-a"><p class="faq-a-inner">Assolutamente. I dati sono cifrati e conservati su server europei (GDPR-compliant). Non condividiamo nulla con terze parti. Puoi eliminare il tuo account in qualsiasi momento.</p></div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Posso provare Pro prima di acquistare?</span><span class="faq-arrow">+</span></div>
+            <div class="faq-a"><p class="faq-a-inner">Sì! Ogni nuovo abbonamento Pro include 7 giorni di prova gratuita. Puoi disdire prima della scadenza senza alcun addebito. Il pagamento è gestito da Google Play.</p></div>
+          </div>
+          <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q"><span>Funziona solo su Android?</span><span class="faq-arrow">+</span></div>
+            <div class="faq-a"><p class="faq-a-inner">Al momento RentTrack è disponibile solo su Android (minimo Android 8.0). Gli annunci sono visitabili da qualsiasi browser tramite link o QR Code.</p></div>
+          </div>
+        </div>
+      </section>
+
       <!-- FINAL CTA -->
       <section class="lp-final-cta anim-reveal">
         <a class="lp-btn-primary" href="${PLAY_URL}" target="_blank">
@@ -511,11 +576,15 @@ function showLanding() {
       </footer>
     </div>`;
 
-  // Intersection observer for scroll animations
+  // Scroll animations
   const observer = new IntersectionObserver(entries => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add("visible"); });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
   document.querySelectorAll(".anim-reveal").forEach(el => observer.observe(el));
+}
+
+function toggleFaq(el) {
+  el.classList.toggle("open");
 }
 
 function esc(s) {
