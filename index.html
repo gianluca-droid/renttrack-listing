@@ -149,31 +149,6 @@ a{text-decoration:none;color:inherit}
 .lp-trust{display:flex;align-items:center;gap:16px;font-size:12px;color:var(--muted);flex-wrap:wrap;justify-content:center}
 .lp-trust-item{display:flex;align-items:center;gap:5px}
 
-/* Phone mockup */
-.lp-phone-wrap{position:relative;z-index:5;display:flex;justify-content:center;padding:0 24px 0;margin-bottom:8px;animation:fadeUp .6s ease .5s both}
-.lp-phone{position:relative;width:200px;background:linear-gradient(145deg,#1A2B4A,#0F1C33);border-radius:36px;padding:10px;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08),inset 0 1px 0 rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.06)}
-.lp-phone-notch{width:80px;height:8px;background:#0A1628;border-radius:0 0 10px 10px;margin:0 auto 8px}
-.lp-phone-screen{background:#0A1628;border-radius:28px;overflow:hidden;aspect-ratio:9/17;max-height:340px}
-.phone-screen-inner{padding:16px 12px;display:flex;flex-direction:column;gap:8px}
-.ps-header{display:flex;align-items:center;justify-content:space-between}
-.ps-title{font-size:10px;font-weight:800;color:var(--cyan);letter-spacing:.5px}
-.ps-dot{width:6px;height:6px;border-radius:50%;background:var(--green)}
-.ps-card{background:rgba(17,34,64,.9);border:1px solid rgba(0,200,255,.15);border-radius:10px;padding:10px}
-.ps-card-label{font-size:7px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.ps-card-val{font-size:13px;font-weight:800;color:var(--cyan)}
-.ps-card-sub{font-size:7px;color:var(--sub);margin-top:2px}
-.ps-row{display:flex;gap:6px}
-.ps-mini{flex:1;background:rgba(17,34,64,.9);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:8px}
-.ps-mini-icon{font-size:12px;margin-bottom:3px}
-.ps-mini-val{font-size:9px;font-weight:700;color:var(--text)}
-.ps-mini-label{font-size:6px;color:var(--muted)}
-.ps-bar-wrap{background:rgba(17,34,64,.9);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:8px}
-.ps-bar-label{font-size:7px;color:var(--muted);font-weight:600;margin-bottom:5px}
-.ps-bars{display:flex;gap:3px;align-items:flex-end;height:30px}
-.ps-bar{width:12px;background:linear-gradient(to top,var(--cyan),var(--purple));border-radius:3px;opacity:.85}
-.lp-phone-home{width:50px;height:5px;background:rgba(255,255,255,.15);border-radius:3px;margin:8px auto 0}
-/* Glow ring */
-.lp-phone::after{content:'';position:absolute;inset:-20px;border-radius:60px;background:radial-gradient(ellipse,rgba(0,200,255,.12) 0%,transparent 70%);z-index:-1;pointer-events:none}
 
 /* Features section */
 .lp-features{position:relative;z-index:5;padding:20px 24px 48px;max-width:900px;margin:0 auto;width:100%}
@@ -435,55 +410,6 @@ function showLanding() {
           </div>
         </div>
       </section>
-
-      <!-- PHONE MOCKUP -->
-      <div class="lp-phone-wrap">
-        <div class="lp-phone">
-          <div class="lp-phone-notch"></div>
-          <div class="lp-phone-screen">
-            <div class="phone-screen-inner">
-              <div class="ps-header">
-                <span class="ps-title">RENTTRACK</span>
-                <div class="ps-dot"></div>
-              </div>
-              <div class="ps-card">
-                <div class="ps-card-label">Entrate mensili</div>
-                <div class="ps-card-val">€ 2.450</div>
-                <div class="ps-card-sub">↑ 3 pagamenti ricevuti</div>
-              </div>
-              <div class="ps-row">
-                <div class="ps-mini">
-                  <div class="ps-mini-icon">🏠</div>
-                  <div class="ps-mini-val">4</div>
-                  <div class="ps-mini-label">Immobili</div>
-                </div>
-                <div class="ps-mini">
-                  <div class="ps-mini-icon">👥</div>
-                  <div class="ps-mini-val">6</div>
-                  <div class="ps-mini-label">Inquilini</div>
-                </div>
-                <div class="ps-mini">
-                  <div class="ps-mini-icon">✅</div>
-                  <div class="ps-mini-val">5/6</div>
-                  <div class="ps-mini-label">Pagato</div>
-                </div>
-              </div>
-              <div class="ps-bar-wrap">
-                <div class="ps-bar-label">Storico entrate</div>
-                <div class="ps-bars">
-                  <div class="ps-bar" style="height:50%"></div>
-                  <div class="ps-bar" style="height:70%"></div>
-                  <div class="ps-bar" style="height:55%"></div>
-                  <div class="ps-bar" style="height:85%"></div>
-                  <div class="ps-bar" style="height:60%"></div>
-                  <div class="ps-bar" style="height:100%"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="lp-phone-home"></div>
-        </div>
-      </div>
 
       <!-- FEATURES -->
       <section class="lp-features anim-reveal" id="features">
