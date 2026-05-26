@@ -194,6 +194,20 @@ a{text-decoration:none;color:inherit}
 .lp-btn-primary:hover{transform:translateY(-3px);box-shadow:0 14px 48px rgba(108,99,255,.55)}
 .lp-btn-primary:active{transform:scale(.98)}
 
+/* STATS BAR */
+.lp-stats{position:relative;z-index:5;display:flex;align-items:stretch;justify-content:center;gap:0;padding:0 24px 64px;max-width:760px;margin:0 auto;width:100%}
+.stat-item{flex:1;text-align:center;padding:20px 12px;border:1px solid rgba(255,255,255,.07);background:rgba(17,34,64,.45);backdrop-filter:blur(12px);transition:background .2s}
+.stat-item:first-child{border-radius:16px 0 0 16px}
+.stat-item:last-child{border-radius:0 16px 16px 0}
+.stat-item:not(:first-child){border-left:none}
+.stat-num{font-size:clamp(22px,5vw,30px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:11px;color:var(--muted);margin-top:4px;font-weight:500;line-height:1.4}
+@media(max-width:480px){.lp-stats{flex-wrap:wrap}.stat-item{min-width:calc(50% - 1px)}.stat-item:first-child{border-radius:16px 0 0 0}.stat-item:nth-child(2){border-radius:0 16px 0 0;border-left:1px solid rgba(255,255,255,.07)}.stat-item:nth-child(3){border-radius:0 0 0 16px;border-top:none}.stat-item:last-child{border-radius:0 0 16px 0;border-top:none;border-left:1px solid rgba(255,255,255,.07)}}
+
+/* PRICING VALUE ANCHOR */
+.price-anchor{text-align:center;margin-top:16px;font-size:13px;color:var(--muted)}
+.price-anchor strong{color:var(--green)}
+
 /* FOOTER */
 .lp-footer{position:relative;z-index:5;text-align:center;padding:28px 24px;color:var(--muted);font-size:12px;border-top:1px solid rgba(255,255,255,.05)}
 .lp-footer a{color:#475569;text-decoration:underline}
@@ -379,20 +393,40 @@ function showLanding() {
       <section class="lp-hero">
         <div class="lp-badge">✨ App italiana per proprietari · Android</div>
         <h1 class="lp-headline">
-          Il modo più semplice<br>
-          <span class="lp-headline-accent">di gestire i tuoi affitti</span>
+          Smetti di perdere tempo<br>
+          <span class="lp-headline-accent">con i tuoi affitti</span>
         </h1>
         <p class="lp-sub">
-          Cedolini automatici, pagamenti tracciati, annunci con QR Code e report finanziari.<br>
-          Tutto gratis, tutto in italiano.
+          Cedolini, pagamenti e scadenze — automatici.<br>
+          L'unica app italiana pensata per il proprietario di casa.
         </p>
         <div class="lp-trust-row">
-          <span class="lp-trust-pill">✅ Gratis</span>
-          <span class="lp-trust-pill">🔒 Privacy first</span>
-          <span class="lp-trust-pill">🇮🇹 Made in Italy</span>
+          <span class="lp-trust-pill">✅ Gratis per sempre</span>
+          <span class="lp-trust-pill">🔒 Dati in Europa</span>
+          <span class="lp-trust-pill">🇮🇹 100% Made in Italy</span>
           <span class="lp-trust-pill">⭐ 7 giorni Pro gratis</span>
         </div>
       </section>
+
+      <!-- STATS -->
+      <div class="lp-stats anim-reveal">
+        <div class="stat-item">
+          <div class="stat-num">5 min</div>
+          <div class="stat-label">per gestire<br>un immobile</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">€0</div>
+          <div class="stat-label">per iniziare,<br>senza scadenze</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Made in Italy,<br>GDPR compliant</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Android<br>8+</div>
+          <div class="stat-label">compatibile,<br>nessun browser</div>
+        </div>
+      </div>
 
       <!-- PAIN POINTS -->
       <div class="lp-problems anim-reveal">
@@ -413,8 +447,8 @@ function showLanding() {
       <!-- FEATURES -->
       <section class="lp-features anim-reveal" id="features">
         <p class="lp-section-label">⚡ Funzionalità</p>
-        <h2 class="lp-section-title">Tutto ciò che serve, niente di più</h2>
-        <p class="lp-section-sub">RentTrack gestisce al posto tuo i compiti ripetitivi. Tu pensi agli immobili.</p>
+        <h2 class="lp-section-title">Tutto ciò che serve.<br>Niente di superfluo.</h2>
+        <p class="lp-section-sub">RentTrack si occupa dei compiti ripetitivi al posto tuo. Tu pensi agli immobili, l'app pensa al resto.</p>
         <div class="feat-grid">
           <div class="feat-card">
             <div class="feat-icon-wrap" style="background:rgba(0,200,255,.12)">📋</div>
@@ -452,7 +486,7 @@ function showLanding() {
       <!-- TESTIMONIALS -->
       <section class="lp-testimonials anim-reveal">
         <p class="lp-section-label">💬 Recensioni</p>
-        <h2 class="lp-section-title">Chi lo usa, non torna indietro</h2>
+        <h2 class="lp-section-title">Chi lo usa, non torna a Excel</h2>
         <div class="testi-grid">
           <div class="testi-card">
             <div class="testi-stars">★★★★★</div>
@@ -484,8 +518,8 @@ function showLanding() {
       <!-- PRICING -->
       <section class="lp-pricing anim-reveal" id="pricing">
         <p class="lp-section-label">💎 Prezzi</p>
-        <h2 class="lp-section-title">Semplice e trasparente</h2>
-        <p class="lp-section-sub">Inizia gratis. Passa a Pro quando ne hai bisogno.</p>
+        <h2 class="lp-section-title">Meno di un caffè al mese</h2>
+        <p class="lp-section-sub">Inizia gratis. Passa a Pro per €3,33/mese — meno di qualsiasi commercialista.</p>
         <div class="price-grid">
           <div class="price-card">
             <span class="price-badge free">GRATUITO</span>
@@ -532,6 +566,7 @@ function showLanding() {
             </div>
           </div>
         </div>
+        <p class="price-anchor">💳 Pagamento sicuro via Google Play · <strong>Nessun addebito oggi</strong> · Disdici quando vuoi</p>
       </section>
 
       <!-- FAQ -->
