@@ -198,7 +198,17 @@ a{text-decoration:none;color:inherit}
 .price-badge{display:inline-block;padding:4px 10px;border-radius:99px;font-size:11px;font-weight:700;margin-bottom:12px}
 .price-badge.free{background:rgba(100,116,139,.15);color:var(--muted)}
 .price-badge.pro-badge{background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff}
-.price-name{font-size:20px;font-weight:800;margin-bottom:4px}
+.price-name{font-size:20px;font-weight:800;margin-bottom:12px}
+.price-options{display:flex;flex-direction:column;gap:8px;margin-bottom:16px}
+.price-option{border-radius:12px;padding:10px 12px;cursor:pointer;border:1px solid rgba(255,255,255,.08);transition:border-color .2s,background .2s}
+.price-option.monthly{background:rgba(255,255,255,.03)}
+.price-option.annual{background:linear-gradient(135deg,rgba(0,200,255,.08),rgba(124,92,252,.08));border-color:rgba(0,200,255,.25)}
+.po-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
+.po-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.po-save{font-size:10px;font-weight:700;color:var(--green);background:rgba(0,212,140,.12);border-radius:99px;padding:2px 8px}
+.po-price{font-size:20px;font-weight:900;letter-spacing:-.5px}
+.po-price span{font-size:12px;font-weight:500;color:var(--muted)}
+.po-sub{font-size:11px;color:var(--muted);margin-top:2px}
 .price-amount{font-size:28px;font-weight:900;letter-spacing:-1px;margin-bottom:14px}
 .price-amount span{font-size:14px;font-weight:500;color:var(--muted)}
 .price-features{display:flex;flex-direction:column;gap:8px}
@@ -536,14 +546,30 @@ function showLanding() {
           <div class="price-card pro">
             <span class="price-badge pro-badge">⭐ PRO</span>
             <div class="price-name" style="color:var(--cyan)">Pro</div>
-            <div class="price-amount" style="background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">€4,99<span style="-webkit-text-fill-color:var(--muted)">/mese</span></div>
+            <div class="price-options">
+              <div class="price-option annual">
+                <div class="po-top">
+                  <span class="po-label">Annuale</span>
+                  <span class="po-save">🏆 Risparmia 33%</span>
+                </div>
+                <div class="po-price" style="background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">€3,33<span style="-webkit-text-fill-color:var(--muted)">/mese</span></div>
+                <div class="po-sub">€39,99 fatturati annualmente · 7 gg gratis</div>
+              </div>
+              <div class="price-option monthly">
+                <div class="po-top">
+                  <span class="po-label">Mensile</span>
+                </div>
+                <div class="po-price">€4,99<span>/mese</span></div>
+                <div class="po-sub">Disdici quando vuoi</div>
+              </div>
+            </div>
             <div class="price-features">
               <div class="pf-item pf-yes"><span class="pf-check">✓</span> Proprietà illimitate</div>
               <div class="pf-item pf-yes"><span class="pf-check">✓</span> Invio PDF inquilini</div>
-              <div class="pf-item pf-yes"><span class="pf-check">✓</span> Export CSV & Excel</div>
+              <div class="pf-item pf-yes"><span class="pf-check">✓</span> Export CSV &amp; Excel</div>
               <div class="pf-item pf-yes"><span class="pf-check">✓</span> Archivio documenti</div>
               <div class="pf-item pf-yes"><span class="pf-check">✓</span> Annunci in cima</div>
-              <div class="pf-item pf-yes"><span class="pf-check">✓</span> 7 giorni gratis</div>
+              <div class="pf-item pf-yes"><span class="pf-check">✓</span> Senza branding RentTrack</div>
             </div>
           </div>
         </div>
