@@ -129,8 +129,12 @@ a{text-decoration:none;color:inherit}
 .lp-logo{display:flex;align-items:center;gap:10px}
 .lp-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--cyan),var(--purple));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 16px rgba(0,200,255,.3)}
 .lp-logo-name{font-size:18px;font-weight:800;color:var(--text);letter-spacing:-.5px}
+.lp-nav-links{display:flex;align-items:center;gap:24px}
+.lp-nav-link{font-size:14px;font-weight:500;color:var(--sub);transition:color .15s}
+.lp-nav-link:hover{color:var(--text)}
 .lp-nav-cta{padding:9px 18px;background:linear-gradient(135deg,var(--cyan),var(--purple));color:#fff;border-radius:99px;font-size:13px;font-weight:700;transition:transform .15s,box-shadow .15s;white-space:nowrap}
 .lp-nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(124,92,252,.5)}
+@media(max-width:400px){.lp-nav-links{display:none}}
 
 /* Hero */
 .lp-hero{position:relative;z-index:5;display:flex;flex-direction:column;align-items:center;text-align:center;padding:40px 24px 20px;max-width:600px;margin:0 auto;width:100%}
@@ -411,6 +415,11 @@ function showLanding() {
           <div class="lp-logo-icon">🏠</div>
           <span class="lp-logo-name">RentTrack</span>
         </div>
+        <div class="lp-nav-links">
+          <a class="lp-nav-link" href="#features">Funzionalità</a>
+          <a class="lp-nav-link" href="#pricing">Prezzi</a>
+          <a class="lp-nav-cta" href="${PLAY_URL}" target="_blank">⭐ Prova Pro</a>
+        </div>
       </nav>
 
       <!-- HERO -->
@@ -485,7 +494,7 @@ function showLanding() {
       </div>
 
       <!-- FEATURES -->
-      <section class="lp-features anim-reveal">
+      <section class="lp-features anim-reveal" id="features">
         <p class="lp-section-label">⚡ Funzionalità</p>
         <h2 class="lp-section-title">Tutto ciò che ti serve</h2>
         <p class="lp-section-sub">Smetti di usare fogli Excel. RentTrack gestisce tutto automaticamente.</p>
@@ -524,7 +533,7 @@ function showLanding() {
       </section>
 
       <!-- PRICING -->
-      <section class="lp-pricing anim-reveal">
+      <section class="lp-pricing anim-reveal" id="pricing">
         <p class="lp-section-label">💎 Piani</p>
         <h2 class="lp-section-title">Semplice e trasparente</h2>
         <p class="lp-section-sub">Inizia gratis, passa a Pro quando ne hai bisogno.</p>
