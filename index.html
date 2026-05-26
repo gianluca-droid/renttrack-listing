@@ -216,6 +216,36 @@ a{text-decoration:none;color:inherit}
 /* ANIMATIONS */
 .anim-reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
 .anim-reveal.visible{opacity:1;transform:translateY(0)}
+
+/* ── DESKTOP ENHANCEMENTS ── */
+@media(min-width:900px){
+  .lp-hero{flex-direction:row;text-align:left;align-items:center;justify-content:space-between;max-width:960px;padding:80px 40px 64px;gap:48px}
+  .lp-hero-text{flex:1;display:flex;flex-direction:column;align-items:flex-start}
+  .lp-hero-visual{flex:0 0 340px;display:flex;flex-direction:column;gap:12px}
+  .lp-badge{margin-bottom:20px}
+  .lp-headline{font-size:clamp(42px,4.5vw,62px);margin-bottom:20px}
+  .lp-sub{font-size:18px;text-align:left;max-width:460px}
+  .lp-trust-row{justify-content:flex-start}
+  .lp-problems{max-width:960px}
+  .lp-features{max-width:1080px}
+  .lp-testimonials{max-width:1080px}
+  .lp-pricing{max-width:820px}
+  .lp-faq{max-width:720px}
+  .lp-stats{max-width:960px}
+}
+
+/* Hero visual card (desktop only) */
+.hero-card{background:rgba(17,34,64,.7);border:1px solid rgba(0,200,255,.15);border-radius:20px;padding:20px;backdrop-filter:blur(16px);box-shadow:0 24px 64px rgba(0,0,0,.4)}
+.hc-header{font-size:11px;font-weight:700;color:var(--cyan);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+.hc-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.hc-row:last-child{border-bottom:none}
+.hc-label{font-size:13px;color:var(--sub)}
+.hc-val{font-size:13px;font-weight:700;color:var(--text)}
+.hc-val.green{color:var(--green)}
+.hc-val.cyan{color:var(--cyan)}
+.hc-val.amber{color:#FBBF24}
+.hc-chip{display:inline-flex;align-items:center;gap:4px;background:rgba(0,212,140,.1);border:1px solid rgba(0,212,140,.25);border-radius:99px;padding:3px 8px;font-size:11px;font-weight:600;color:var(--green)}
+@media(max-width:899px){.lp-hero-text{width:100%}.lp-hero-visual{display:none}}
 </style>
 </head>
 <body>
@@ -391,20 +421,47 @@ function showLanding() {
 
       <!-- HERO -->
       <section class="lp-hero">
-        <div class="lp-badge">✨ App italiana per proprietari · Android</div>
-        <h1 class="lp-headline">
-          Smetti di perdere tempo<br>
-          <span class="lp-headline-accent">con i tuoi affitti</span>
-        </h1>
-        <p class="lp-sub">
-          Cedolini, pagamenti e scadenze — automatici.<br>
-          L'unica app italiana pensata per il proprietario di casa.
-        </p>
-        <div class="lp-trust-row">
-          <span class="lp-trust-pill">✅ Gratis per sempre</span>
-          <span class="lp-trust-pill">🔒 Dati in Europa</span>
-          <span class="lp-trust-pill">🇮🇹 100% Made in Italy</span>
-          <span class="lp-trust-pill">⭐ 7 giorni Pro gratis</span>
+        <div class="lp-hero-text">
+          <div class="lp-badge">✨ App italiana per proprietari · Android</div>
+          <h1 class="lp-headline">
+            Smetti di perdere tempo<br>
+            <span class="lp-headline-accent">con i tuoi affitti</span>
+          </h1>
+          <p class="lp-sub">
+            Cedolini, pagamenti e scadenze — automatici.<br>
+            L'unica app italiana pensata per il proprietario di casa.
+          </p>
+          <div class="lp-trust-row">
+            <span class="lp-trust-pill">✅ Gratis per sempre</span>
+            <span class="lp-trust-pill">🔒 Dati in Europa</span>
+            <span class="lp-trust-pill">🇮🇹 100% Made in Italy</span>
+            <span class="lp-trust-pill">⭐ 7 giorni Pro gratis</span>
+          </div>
+        </div>
+        <div class="lp-hero-visual">
+          <div class="hero-card">
+            <div class="hc-header">📊 Dashboard RentTrack</div>
+            <div class="hc-row">
+              <span class="hc-label">Entrate mensili</span>
+              <span class="hc-val cyan">€ 1.850</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-label">Immobili gestiti</span>
+              <span class="hc-val">3 proprietà</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-label">Pagamenti ricevuti</span>
+              <span class="hc-val"><span class="hc-chip">✓ 3/3 pagato</span></span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-label">Prossima scadenza</span>
+              <span class="hc-val amber">⏰ tra 5 giorni</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-label">Cedolini inviati</span>
+              <span class="hc-val green">↑ 3 questo mese</span>
+            </div>
+          </div>
         </div>
       </section>
 
